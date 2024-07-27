@@ -1,0 +1,22 @@
+version: '3.6'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "Your password"
+      POSTGRES_USER: fintech_user
+      POSTGRES_DB: fintech_db
+    ports:
+      - "5432:5432"
+
+  hasura:
+    image: hasura/graphql-engine:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: "Your postgres end point"
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"

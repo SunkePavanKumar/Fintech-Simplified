@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="users.html">Users</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="create-user.html">Create User</a>
+            <a href="create-account.html">Create Account</a>
+            <a href="deposit-withdraw.html">Deposit/Withdraw</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Transactions</h1>
+        
+        <!-- Filter Form -->
+        <form id="filter-form">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" name="userId">
+            <label for="accountId">Account ID:</label>
+            <input type="text" id="accountId" name="accountId">
+            <button type="submit">Filter Transactions</button>
+        </form>
+        
+        <table id="transactions-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Account ID</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here -->
+            </tbody>
+        </table>
+        
+        <script src="transactions.js"></script>
+        <script>
+            // Handle form submission to filter transactions
+            document.getElementById('filter-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                const userId = document.getElementById('userId').value.trim();
+                const accountId = document.getElementById('accountId').value.trim();
+
+                // Redirect to the current page with query parameters
+                let url = 'transactions.html';
+                if (userId) {
+                    url += `?userId=${userId}`;
+                } else if (accountId) {
+                    url += `?accountId=${accountId}`;
+                }
+                window.location.href = url;
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit/Withdraw</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="users.html">Users</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="create-user.html">Create User</a>
+            <a href="create-account.html">Create Account</a>
+            <a href="deposit-withdraw.html">Deposit/Withdraw</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Deposit/Withdraw</h1>
+        <form id="deposit-form">
+            <h2>Deposit</h2>
+            <label for="deposit-account-id">Account ID:</label>
+            <input type="text" id="deposit-account-id" name="deposit-account-id" required>
+            <label for="deposit-amount">Amount:</label>
+            <input type="number" id="deposit-amount" name="deposit-amount" required>
+            <button type="submit">Deposit</button>
+        </form>
+        <form id="withdraw-form">
+            <h2>Withdraw</h2>
+            <label for="withdraw-account-id">Account ID:</label>
+            <input type="text" id="withdraw-account-id" name="withdraw-account-id" required>
+            <label for="withdraw-amount">Amount:</label>
+            <input type="number" id="withdraw-amount" name="withdraw-amount" required>
+            <button type="submit">Withdraw</button>
+        </form>
+        <script src="js/app.js"></script>
+        <script>
+            document.getElementById('deposit-form').addEventListener('submit', deposit);
+            document.getElementById('withdraw-form').addEventListener('submit', withdraw);
+        </script>
+    </main>
+</body>
+</html>

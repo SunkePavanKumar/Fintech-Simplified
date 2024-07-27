@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="users.html">Users</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="transactions.html">Transactions</a>
+            <a href="create-user.html">Create User</a>
+            <a href="create-account.html">Create Account</a>
+            <a href="deposit-withdraw.html">Deposit/Withdraw</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Users</h1>
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+            
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here -->
+            </tbody>
+        </table>
+        <script>
+            loadUsers();
+        </script>
+    </main>
+
+    <script src="users.js"></script>
+</body>
+</html>
